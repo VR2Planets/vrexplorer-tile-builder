@@ -1,0 +1,3 @@
+[submodule "Assets/Vr2Planets/Common"]
+	path = Assets/Vr2Planets/Common
+	url = https://github.com/VR2Planets/UnityCommon.git
