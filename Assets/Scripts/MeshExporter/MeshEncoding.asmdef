@@ -1,0 +1,17 @@
+{
+    "name": "MeshExporter",
+    "rootNamespace": "MeshExporter",
+    "references": [
+        "DracoEncoder",
+        "Draco"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": true,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

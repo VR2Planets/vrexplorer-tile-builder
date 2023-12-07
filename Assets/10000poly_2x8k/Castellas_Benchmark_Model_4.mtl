@@ -1,0 +1,21 @@
+#
+# Wavefront material file
+# Created in RealityCapture
+# Engine version v1.3.0.117278
+#
+
+newmtl Castellas_Benchmark_Model_4_u1_v1
+Ka 1 1 1
+Kd 1 1 1
+d 1
+Ns 0
+illum 1
+map_Kd Castellas_Benchmark_Model_4_u1_v1_diffuse.png
+
+newmtl Castellas_Benchmark_Model_4_u2_v1
+Ka 1 1 1
+Kd 1 1 1
+d 1
+Ns 0
+illum 1
+map_Kd Castellas_Benchmark_Model_4_u2_v1_diffuse.png

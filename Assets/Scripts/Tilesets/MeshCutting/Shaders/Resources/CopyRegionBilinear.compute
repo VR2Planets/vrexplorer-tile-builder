@@ -1,0 +1,32 @@
+#pragma kernel CopyRegionBilinear
+
+SamplerState sampler_bilinear_repeat;
+float4		 SourceTextureTransform;
+Texture2D    Source;
+float        SrcU;
+float        SrcV;
+float        SrcWidth;
+float        SrcHeight;
+
+RWTexture2D<float4> Destination;
+uint                DstX;
+uint                DstY;
+uint                DstWidth;
+uint                DstHeight;
+
+[numthreads(8,8,1)]
+void CopyRegionBilinear(uint3 id : SV_DispatchThreadID)
+{
+	if(id.x <= DstWidth && id.y <= DstHeight)
+	{
+		const uint2 dstPixel = uint2(DstX + id.x, DstY + id.y);
+
+		const float2 uv = float2(
+			SrcU + SrcWidth * ((float) (id.x) / (float) DstWidth),
+			SrcV + SrcHeight * ((float) (id.y + 0.5) / (float) DstHeight)
+		);
+
+		// Fixme change lod level based on zoom
+		Destination[dstPixel] = Source.SampleLevel(sampler_bilinear_repeat, (uv.xy * SourceTextureTransform.xy + SourceTextureTransform.zw), 0);
+	}
+}
